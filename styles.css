@@ -161,33 +161,12 @@ body {
     position: relative;
 }
 
-.dashboard-mockup {
-    background: rgba(255, 255, 255, 0.1);
+.dashboard-gif {
+    width: 100%;
+    max-width: 600px;
     border-radius: 20px;
-    padding: 2rem;
-    backdrop-filter: blur(10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
     border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.chart-area {
-    height: 200px;
-    background: linear-gradient(45deg, #00d4ff, #0099cc);
-    border-radius: 10px;
-    margin-bottom: 1rem;
-    position: relative;
-}
-
-.ai-chat {
-    background: rgba(0, 0, 0, 0.3);
-    padding: 1rem;
-    border-radius: 10px;
-}
-
-.chat-message.bot {
-    background: rgba(0, 212, 255, 0.2);
-    padding: 0.5rem;
-    border-radius: 8px;
-    font-size: 0.9rem;
 }
 
 /* Chart Scanner Section */
