@@ -1,0 +1,265 @@
+Project Brief – Tradero AI
+Overview
+Tradero AI is a cutting-edge educational platform designed to empower retail investors and traders worldwide by leveraging artificial intelligence. Our mission is to simplify finance, decode market complexity, and provide accessible, intelligent tools that help users learn, strategize, and invest with confidence.
+Purpose
+To educate and support traders and investors by combining the power of AI with world-class financial content, interactive tools, and personalized learning experiences.
+Core Objectives
+Make trading and investing education accessible and engaging.
+
+
+Provide AI-driven insights to enhance decision-making and reduce noise.
+
+
+Offer structured learning paths tailored to user goals and experience levels.
+
+
+Build a trusted global brand at the intersection of fintech and edtech.
+
+Tradero AI – Homepage Brief
+Purpose of the Homepage
+Create a compelling first impression for Tradero AI — an AI-powered educational platform for traders and investors — by highlighting its unique tools, proprietary AI, and user-centered approach to mastering the markets. Make sure it’s 100% mobile optimised as traffic is mainly mobile.
+
+1. Hero Section (Above the Fold)
+Goal: Grab attention and clearly state Tradero AI’s value proposition.
+Headline:
+ "Learn to Trade Smarter. With AI on Your Side."
+
+
+Subheadline:
+ Master the markets with intelligent tools, real-time recommendations, and a personalized learning experience powered by AI.
+
+
+CTAs:
+
+
+"Start Learning Free"
+
+
+"Watch How It Works"
+
+
+Visuals:
+ Animated preview of the dashboard, chat assistant, and learning path.
+
+
+
+2. Feature Highlight – AI Chart Scanner
+Goal: Position Tradero AI as more than just an education platform — a smart decision-making companion.
+Headline:
+ "AI That Reads Charts. So You Don’t Have To."
+
+
+Subheadline:
+ Get real-time buy/sell signals powered by advanced technical analysis and explained in simple language.
+
+
+Key Features (Icon Grid):
+
+
+📊 Smart Pattern Recognition – Detects chart patterns, RSI, MACD, support/resistance, and more.
+
+
+⚡ Instant Buy/Sell Signals – Real-time recommendations with confidence scores.
+
+
+🧠 Plain English Explanations – “MACD just crossed. RSI confirms. Potential upside.”
+
+
+🔬 Backtested Logic – Every suggestion is data-driven and statistically validated.
+
+
+🌐 Supports Stocks, Crypto, Forex – Scan any market, instantly.
+
+
+Visual:
+ Interactive UI or animation showing a chart being analyzed with a clear "BUY" or "SELL" recommendation.
+
+
+CTA:
+
+
+"Try the Scanner"
+
+
+"See How It Works"
+
+
+
+3. What Is Tradero AI?
+Goal: Educate new users on the overall platform concept.
+Headline:
+ "More Than Courses. A Smarter Way to Master Trading."
+
+
+Subheadline:
+ Tradero AI combines structured learning with real-time tools to turn market noise into clarity.
+
+
+Format:
+ 2-column layout or short animated video explaining:
+
+
+Personalized learning journey
+
+
+AI mentor for Q&A
+
+
+Tools to simulate and analyze strategies
+
+
+
+4. Key Features Overview
+Goal: Communicate the full scope of tools and value.
+Headline:
+ “Everything You Need to Trade with Confidence.”
+
+
+Feature Tiles:
+
+
+✅ Personalized Learning Paths
+
+
+🤖 AI Trading Mentor (Chat-Based)
+
+
+📈 Strategy Simulator with Feedback
+
+
+🗞️ Daily AI Market Briefings
+
+
+🌍 Global Community + Leaderboards
+
+
+🌐 Multi-Language Access
+
+
+
+5. Who It’s For (Audience Match Section)
+Goal: Help visitors self-identify and see value for their level.
+Headline:
+ “Built for Beginners, Designed for Pros.”
+
+
+Subheadline:
+ Whether you’re new to trading or looking to sharpen your edge, Tradero adapts to your journey.
+
+
+Personas:
+
+
+🧑‍🏫 Beginners – Learn the fundamentals with clarity.
+
+
+📊 Intermediate Traders – Refine your edge with feedback and signals.
+
+
+🧓 Long-Term Investors – Use AI to identify trends and entry points.
+
+
+🌐 Crypto Traders – Decode volatility with technical clarity.
+
+
+
+6. AI in Action (Live Demo Teaser)
+Goal: Let users experience how the AI works.
+Headline:
+ “Ask Anything. Get Clear Answers from Your AI Mentor.”
+
+
+Sample Prompts:
+
+
+“What’s a bullish engulfing candle?”
+
+
+“Is now a good time to enter ETH?”
+
+
+“Help me build a risk-managed swing strategy.”
+
+
+Visual:
+ Chat preview with questions and AI responses.
+
+
+CTA:
+ "Chat With the AI"
+
+
+
+7. Social Proof & Testimonials
+Goal: Build credibility and trust.
+Headline:
+ “Join Thousands of Traders Learning the Smarter Way.”
+
+
+Elements:
+
+
+User testimonials (text or video)
+
+
+Highlight community growth or platform stats
+
+
+Review snippets (e.g., Trustpilot, app store, Discord)
+
+
+
+8. Pricing Preview + CTA
+Goal: Move users toward conversion.
+Headline:
+ “Start for Free. Upgrade Anytime.”
+
+
+Subheadline:
+ Free to explore. Powerful tools unlocked with Pro and Elite tiers.
+
+
+Plan Teaser:
+
+
+Free – Access core content + AI chat.
+
+
+Pro – Full learning library + AI scanner + market briefings.
+
+
+Elite – All tools + mentorship + premium strategies.
+
+
+CTA:
+
+
+"Start Free"
+
+
+"View Plans"
+
+
+
+9. Footer
+Goal: Provide secondary navigation, trust, and community entry.
+Elements:
+
+
+Logo + slogan
+
+
+Links: About, Blog, Pricing, Contact, Terms, Privacy
+
+
+Social Media: Twitter, YouTube, Discord, LinkedIn
+
+
+Email opt-in: “Get Weekly AI-Powered Insights”
+
+
+Registration flow
+
+Copy this registration flow
+
+Just reduce the number of questions by 50%. The form needs to collect what we usually collect: name email phone number + redirect to the 2nd step we already created.
