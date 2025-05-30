@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Get form data
             const formData = {
+                form_type: 'registration',
                 name: document.getElementById('name').value,
                 email: document.getElementById('email').value,
                 phone: document.getElementById('phone').value
@@ -42,17 +43,36 @@ document.addEventListener('DOMContentLoaded', function() {
             submitBtn.textContent = 'Processing...';
             submitBtn.classList.add('loading');
             
-            // Simulate form submission
-            setTimeout(() => {
-                alert('Registration successful! Redirecting to step 2...');
-                // Here you would normally redirect to step 2
-                // window.location.href = '/step2';
-                
-                // Reset form for demo
-                registrationForm.reset();
+            // Send data to PHP handler
+            fetch('form_handler.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert('Registration successful! Redirecting to complete your registration...');
+                    if (data.redirect_url) {
+                        window.location.href = data.redirect_url;
+                    } else {
+                        // Reset form if no redirect URL
+                        registrationForm.reset();
+                    }
+                } else {
+                    alert('Error: ' + (data.error || 'Registration failed'));
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Network error. Please try again.');
+            })
+            .finally(() => {
                 submitBtn.textContent = originalText;
                 submitBtn.classList.remove('loading');
-            }, 2000);
+            });
         });
     }
     
@@ -74,8 +94,39 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
             
-            alert('Thank you for subscribing!');
-            e.target.querySelector('input[type="email"]').value = '';
+            const submitBtn = e.target.querySelector('button');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Subscribing...';
+            submitBtn.disabled = true;
+            
+            // Send data to PHP handler
+            fetch('form_handler.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    form_type: 'newsletter',
+                    email: email
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert('Thank you for subscribing!');
+                    e.target.querySelector('input[type="email"]').value = '';
+                } else {
+                    alert('Error: ' + (data.error || 'Subscription failed'));
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Network error. Please try again.');
+            })
+            .finally(() => {
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            });
         });
     }
     
@@ -87,10 +138,12 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Get form data
             const formData = {
+                form_type: 'contact',
                 name: document.getElementById('contact-name').value,
                 email: document.getElementById('contact-email').value,
                 subject: document.getElementById('contact-subject').value,
-                message: document.getElementById('contact-message').value
+                message: document.getElementById('contact-message').value,
+                inquiry_type: document.getElementById('contact-inquiry-type') ? document.getElementById('contact-inquiry-type').value : 'general'
             };
             
             // Basic validation
@@ -112,12 +165,33 @@ document.addEventListener('DOMContentLoaded', function() {
             submitBtn.textContent = 'Sending...';
             submitBtn.classList.add('loading');
             
-            // Simulate form submission
-            setTimeout(() => {
-                alert('Thank you for your message! We\'ll get back to you within 24 hours.');
-                
-                // Reset form
-                contactForm.reset();
+            // Send data to PHP handler
+            fetch('form_handler.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert('Thank you for your message! We\'ll get back to you within 24 hours.');
+                    if (data.redirect_url) {
+                        window.location.href = data.redirect_url;
+                    } else {
+                        // Reset form
+                        contactForm.reset();
+                    }
+                } else {
+                    alert('Error: ' + (data.error || 'Failed to send message'));
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Network error. Please try again.');
+            })
+            .finally(() => {
                 submitBtn.textContent = originalText;
                 submitBtn.classList.remove('loading');
             }, 2000);
