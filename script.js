@@ -176,7 +176,6 @@ document.addEventListener('DOMContentLoaded', function() {
             .then(response => response.json())
             .then(data => {
                 if (data.success) {
-                    alert('Thank you for your message! We\'ll get back to you within 24 hours.');
                     if (data.redirect_url) {
                         window.location.href = data.redirect_url;
                     } else {
@@ -184,7 +183,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         contactForm.reset();
                     }
                 } else {
-                    alert('Error: ' + (data.error || 'Failed to send message'));
+                    alert(data.error || 'Failed to send message');
                 }
             })
             .catch(error => {

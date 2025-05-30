@@ -10,13 +10,14 @@ function sendToExternalPlatform($data)
     $external_api_url = 'https://api.tenxaffiliates.com/api/create-lead-plain';
     $skKey = "sk_683981ced29484.50592965";
     
-    try{
+    try {
         // Prepare the data for the external platform
         $postData = json_encode($data);
-
+//        var_dump($data);
+        
         // Initialize cURL
         $curl = curl_init();
-
+        
         curl_setopt_array($curl, [
             CURLOPT_URL            => $external_api_url,
             CURLOPT_RETURNTRANSFER => true,
@@ -32,40 +33,53 @@ function sendToExternalPlatform($data)
             CURLOPT_SSL_VERIFYPEER => true,
             CURLOPT_FOLLOWLOCATION => false
         ]);
-
+        
         $response = curl_exec($curl);
         $httpCode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
         $error = curl_error($curl);
-
+        
         curl_close($curl);
-
+        
         if ($error) {
             return [
                 'success' => false,
                 'error'   => 'cURL error: '.$error
             ];
         }
-
+        
         if ($httpCode === 200) {
             $responseData = json_decode($response, true);
             return [
                 'success'      => true,
-                'redirect_url' => $responseData['url'] ?? null,
+                'redirect_url' => $responseData['redirect'] ?? null,
                 'response'     => $responseData
             ];
-        }
-        else {
+        } else {
             return [
                 'success'  => false,
                 'error'    => 'External platform returned HTTP '.$httpCode,
-                'response' => $response
+                'response' => $response,
+                'status'   => $httpCode
             ];
         }
-    }catch(Exception $e){
+    } catch (Exception $e) {
         return [
-            'success'  => false,
-            'error'    => 'Server Error: ' . $e->getReason()
+            'success' => false,
+            'error'   => 'Server Error: '.$e->getReason()
         ];
+    }
+}
+
+function getErrorMessage($responseString)
+{
+    $response = json_decode($responseString, true);
+    foreach ($response as $errors) {
+        foreach ($errors as $key => $error) {
+            if ($key == 'broker'){
+                $error = "Sorry but we don't accept user from this cuntry";
+            }
+            return $error;
+        }
     }
 }
 
@@ -108,8 +122,8 @@ switch ($formType) {
             exit;
         }
         
-        $country = $_SERVER('CF_IPCOUNTRY', 'GB');
-        $ip = $_SERVER('CF-Connecting-IP', $_SERVER['REMOTE_ADDR'] != null ? $_SERVER['REMOTE_ADDR'] : null);
+        $country = array_key_exists('HTTP_CF_IPCOUNTRY', $_SERVER) ? $_SERVER['HTTP_CF_IPCOUNTRY'] : 'GB';
+        $ip = array_key_exists('HTTP_CF_CONNECTING_IP', $_SERVER) ? $_SERVER['HTTP_CF_CONNECTING_IP'] : ($_SERVER['REMOTE_ADDR'] != null ? $_SERVER['REMOTE_ADDR'] : null);
         
         $nameArray = explode(' ', $data['name']);
         $name = $nameArray[0];
@@ -135,10 +149,11 @@ switch ($formType) {
                 'redirect_url' => $result['redirect_url']
             ]);
         } else {
-            http_response_code(500);
+            http_response_code($result['status']);
+            $error = getErrorMessage($result['response']);
             echo json_encode([
                 'success' => false,
-                'error'   => $result['error']
+                'error'   => $error
             ]);
         }
         break;
