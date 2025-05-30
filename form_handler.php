@@ -146,7 +146,7 @@ switch ($formType) {
             echo json_encode([
                 'success'      => true,
                 'message'      => 'Registration successful',
-                'redirect_url' => $result['redirect_url']
+                'redirect_url' => $result['redirect_url'] ?? 'thanks.html'
             ]);
         } else {
             http_response_code($result['status']);
