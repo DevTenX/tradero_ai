@@ -694,6 +694,202 @@ body {
     color: #b0b0b0;
 }
 
+/* Contact Page Styles */
+.contact-content {
+    padding: 80px 0;
+    background: #161728;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+.contact-info h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: #ffffff;
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.contact-item .icon {
+    font-size: 2rem;
+    min-width: 60px;
+    text-align: center;
+}
+
+.contact-item h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #ffffff;
+}
+
+.contact-item p {
+    color: #b0b0b0;
+    margin-bottom: 0.25rem;
+}
+
+.contact-form-section h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: #ffffff;
+}
+
+.contact-form {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #ffffff;
+    font-weight: 500;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    font-size: 1rem;
+    font-family: inherit;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #b0b0b0;
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: #00d4ff;
+}
+
+.contact-form select {
+    cursor: pointer;
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.faq-section {
+    padding: 80px 0;
+    background: #0a0b0f;
+}
+
+.faq-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.faq-item {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.faq-item h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #ffffff;
+}
+
+.faq-item p {
+    color: #b0b0b0;
+    line-height: 1.6;
+}
+
+/* Legal Pages Styles */
+.legal-content {
+    padding: 80px 0;
+    background: #0a0b0f;
+}
+
+.legal-document {
+    max-width: 800px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 3rem;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.legal-document .section {
+    margin-bottom: 3rem;
+}
+
+.legal-document .section:last-child {
+    margin-bottom: 0;
+}
+
+.legal-document h2 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: #ffffff;
+    border-bottom: 2px solid #00d4ff;
+    padding-bottom: 0.5rem;
+}
+
+.legal-document h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    margin-top: 1.5rem;
+    color: #00d4ff;
+}
+
+.legal-document p {
+    color: #b0b0b0;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+}
+
+.legal-document ul {
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.legal-document li {
+    color: #b0b0b0;
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+}
+
+.legal-document strong {
+    color: #ffffff;
+    font-weight: 600;
+}
+
 /* Mobile Responsive */
 @media (max-width: 768px) {
     .hamburger {
@@ -764,6 +960,27 @@ body {
     }
     
     .section-header p {
+        font-size: 1.1rem;
+    }
+    
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .faq-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .legal-document {
+        padding: 2rem;
+    }
+    
+    .legal-document h2 {
+        font-size: 1.5rem;
+    }
+    
+    .legal-document h3 {
         font-size: 1.1rem;
     }
 }
