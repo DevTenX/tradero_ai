@@ -1349,6 +1349,18 @@ body {
     }
 }
 
+/* Hide "Watch How It Works" buttons */
+.btn-secondary:contains("Watch How It Works"),
+button:contains("Watch How It Works") {
+    display: none !important;
+}
+
+/* Alternative approach - hide by text content */
+.hero-ctas .btn-secondary:nth-child(2),
+.section-ctas .btn-secondary {
+    display: none !important;
+}
+
 /* Smooth scrolling */
 html {
     scroll-behavior: smooth;
