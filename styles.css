@@ -1,4 +1,3 @@
-
 * {
     margin: 0;
     padding: 0;
@@ -647,7 +646,7 @@ body {
 
 .footer-links {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
 }
 
@@ -966,91 +965,91 @@ body {
     .hamburger {
         display: flex;
     }
-    
+
     .nav-menu {
         display: none;
     }
-    
+
     .hero .container {
         grid-template-columns: 1fr;
         text-align: center;
     }
-    
+
     .hero-content h1 {
         font-size: 2.5rem;
     }
-    
+
     .hero-ctas {
         justify-content: center;
     }
-    
+
     .two-column {
         grid-template-columns: 1fr;
         gap: 2rem;
     }
-    
+
     .features-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .features-grid-large {
         grid-template-columns: 1fr;
     }
-    
+
     .personas-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .pricing-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .testimonials {
         grid-template-columns: 1fr;
     }
-    
+
     .stats {
         gap: 2rem;
     }
-    
+
     .footer-content {
         grid-template-columns: 1fr;
         text-align: center;
     }
-    
+
     .footer-links {
         grid-template-columns: 1fr;
     }
-    
+
     .newsletter-form {
         flex-direction: column;
     }
-    
+
     .section-header h2 {
         font-size: 2rem;
     }
-    
+
     .section-header p {
         font-size: 1.1rem;
     }
-    
+
     .contact-grid {
         grid-template-columns: 1fr;
         gap: 2rem;
     }
-    
+
     .faq-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .legal-document {
         padding: 2rem;
     }
-    
+
     .legal-document h2 {
         font-size: 1.5rem;
     }
-    
+
     .legal-document h3 {
         font-size: 1.1rem;
     }
@@ -1060,36 +1059,36 @@ body {
     .container {
         padding: 0 15px;
     }
-    
+
     .hero {
         padding: 100px 0 60px;
     }
-    
+
     .hero-content h1 {
         font-size: 2rem;
     }
-    
+
     .hero-content p {
         font-size: 1.1rem;
     }
-    
+
     .btn-primary.large, .btn-secondary.large {
         padding: 14px 24px;
         font-size: 1rem;
     }
-    
+
     .feature-card, .feature-tile, .persona-card, .pricing-card {
         padding: 1.5rem;
     }
-    
+
     .registration-form {
         padding: 2rem;
     }
-    
+
     .chat-container {
         padding: 1rem;
     }
-    
+
     .dashboard-mockup {
         padding: 1rem;
     }
