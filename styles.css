@@ -1110,6 +1110,245 @@ body {
     animation: fadeInUp 0.8s ease-out;
 }
 
+/* Additional Form Styles for External Forms */
+.external-form {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 3rem;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.external-form h1,
+.external-form h2 {
+    color: #ffffff;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.external-form h1 {
+    font-size: 2.5rem;
+    background: linear-gradient(135deg, #ffffff, #00d4ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.external-form h2 {
+    font-size: 2rem;
+}
+
+.external-form p,
+.external-form .subtitle {
+    color: #b0b0b0;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+.external-form .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.external-form .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.external-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #ffffff;
+    font-weight: 500;
+}
+
+.external-form input,
+.external-form select,
+.external-form textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    font-size: 1rem;
+    font-family: 'Inter', sans-serif;
+    transition: border-color 0.3s;
+}
+
+.external-form input::placeholder,
+.external-form textarea::placeholder {
+    color: #b0b0b0;
+}
+
+.external-form input:focus,
+.external-form select:focus,
+.external-form textarea:focus {
+    outline: none;
+    border-color: #00d4ff;
+    box-shadow: 0 0 0 2px rgba(0, 212, 255, 0.2);
+}
+
+.external-form select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+    background-position: right 0.5rem center;
+    background-repeat: no-repeat;
+    background-size: 1.5em 1.5em;
+    padding-right: 2.5rem;
+}
+
+.external-form button {
+    width: 100%;
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, #00d4ff, #0099cc);
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-family: 'Inter', sans-serif;
+}
+
+.external-form button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 212, 255, 0.3);
+}
+
+.external-form button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.external-form .checkbox-group {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.external-form .checkbox-group input[type="checkbox"] {
+    width: auto;
+    margin: 0;
+    min-width: 18px;
+    height: 18px;
+    margin-top: 2px;
+}
+
+.external-form .checkbox-group label {
+    margin: 0;
+    color: #b0b0b0;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.external-form .checkbox-group a {
+    color: #00d4ff;
+    text-decoration: none;
+}
+
+.external-form .checkbox-group a:hover {
+    text-decoration: underline;
+}
+
+.external-form .step-indicator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.external-form .step {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #b0b0b0;
+    font-weight: 600;
+    margin: 0 1rem;
+    position: relative;
+}
+
+.external-form .step.active {
+    background: linear-gradient(135deg, #00d4ff, #0099cc);
+    border-color: #00d4ff;
+    color: #ffffff;
+}
+
+.external-form .step.completed {
+    background: #00ff88;
+    border-color: #00ff88;
+    color: #000;
+}
+
+.external-form .step::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    width: 40px;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-50%);
+}
+
+.external-form .step:last-child::after {
+    display: none;
+}
+
+.external-form .error-message {
+    background: rgba(255, 0, 0, 0.1);
+    border: 1px solid rgba(255, 0, 0, 0.3);
+    color: #ff6b6b;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.external-form .success-message {
+    background: rgba(0, 255, 136, 0.1);
+    border: 1px solid rgba(0, 255, 136, 0.3);
+    color: #00ff88;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+/* Mobile responsive for external forms */
+@media (max-width: 768px) {
+    .external-form {
+        padding: 2rem;
+        margin: 1rem;
+    }
+    
+    .external-form .form-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .external-form h1 {
+        font-size: 2rem;
+    }
+    
+    .external-form h2 {
+        font-size: 1.5rem;
+    }
+}
+
 /* Smooth scrolling */
 html {
     scroll-behavior: smooth;
