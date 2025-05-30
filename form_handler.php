@@ -10,53 +10,61 @@ function sendToExternalPlatform($data)
     $external_api_url = 'https://api.tenxaffiliates.com/api/create-lead-plain';
     $skKey = "sk_683981ced29484.50592965";
     
-    // Prepare the data for the external platform
-    $postData = json_encode($data);
-    
-    // Initialize cURL
-    $curl = curl_init();
-    
-    curl_setopt_array($curl, [
-        CURLOPT_URL            => $external_api_url,
-        CURLOPT_RETURNTRANSFER => true,
-        CURLOPT_POST           => true,
-        CURLOPT_POSTFIELDS     => $postData,
-        CURLOPT_HTTPHEADER     => [
-            'Content-Type: application/json',
-            'Content-Length: '.strlen($postData),
-            'Authorization: '.$skKey
-        ],
-        CURLOPT_TIMEOUT        => 30,
-        CURLOPT_CONNECTTIMEOUT => 10,
-        CURLOPT_SSL_VERIFYPEER => true,
-        CURLOPT_FOLLOWLOCATION => false
-    ]);
-    
-    $response = curl_exec($curl);
-    $httpCode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
-    $error = curl_error($curl);
-    
-    curl_close($curl);
-    
-    if ($error) {
-        return [
-            'success' => false,
-            'error'   => 'cURL error: '.$error
-        ];
-    }
-    
-    if ($httpCode === 200) {
-        $responseData = json_decode($response, true);
-        return [
-            'success'      => true,
-            'redirect_url' => $responseData['url'] ?? null,
-            'response'     => $responseData
-        ];
-    } else {
+    try{
+        // Prepare the data for the external platform
+        $postData = json_encode($data);
+
+        // Initialize cURL
+        $curl = curl_init();
+
+        curl_setopt_array($curl, [
+            CURLOPT_URL            => $external_api_url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_POST           => true,
+            CURLOPT_POSTFIELDS     => $postData,
+            CURLOPT_HTTPHEADER     => [
+                'Content-Type: application/json',
+                'Content-Length: '.strlen($postData),
+                'Authorization: '.$skKey
+            ],
+            CURLOPT_TIMEOUT        => 30,
+            CURLOPT_CONNECTTIMEOUT => 10,
+            CURLOPT_SSL_VERIFYPEER => true,
+            CURLOPT_FOLLOWLOCATION => false
+        ]);
+
+        $response = curl_exec($curl);
+        $httpCode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+        $error = curl_error($curl);
+
+        curl_close($curl);
+
+        if ($error) {
+            return [
+                'success' => false,
+                'error'   => 'cURL error: '.$error
+            ];
+        }
+
+        if ($httpCode === 200) {
+            $responseData = json_decode($response, true);
+            return [
+                'success'      => true,
+                'redirect_url' => $responseData['url'] ?? null,
+                'response'     => $responseData
+            ];
+        }
+        else {
+            return [
+                'success'  => false,
+                'error'    => 'External platform returned HTTP '.$httpCode,
+                'response' => $response
+            ];
+        }
+    }catch(Exception $e){
         return [
             'success'  => false,
-            'error'    => 'External platform returned HTTP '.$httpCode,
-            'response' => $response
+            'error'    => 'Server Error: ' . $e->getReason()
         ];
     }
 }
@@ -228,4 +236,3 @@ switch ($formType) {
         echo json_encode(['error' => 'Invalid form type']);
         break;
 }
-?>
