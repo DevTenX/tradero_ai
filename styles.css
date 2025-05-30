@@ -195,19 +195,25 @@ body {
 }
 
 .features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-    margin-bottom: 3rem;
+    /*display: grid;*/
+    /*grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));*/
+    /*gap: 2rem;*/
+    /*margin-bottom: 3rem;*/
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .feature-card {
+    flex: 0 0 calc(16.66% - 2rem);
     background: rgba(255, 255, 255, 0.05);
     padding: 2rem;
     border-radius: 16px;
     text-align: center;
     border: 1px solid rgba(255, 255, 255, 0.1);
     transition: transform 0.3s;
+    min-width: 280px;
+    margin: 15px;
 }
 
 .feature-card:hover {
