@@ -178,10 +178,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (data.success) {
                     fbq('track', 'Lead');
                     if (data.redirect_url) {
-                        window.location.href = data.redirect_url;
-                    } else {
-                        // Reset form
-                        contactForm.reset();
+                        window.location.href = 'https://www.tradero-ai.com/thanks.html?redirect=' + encodeURIComponent(data.redirect_url);
+                    }else{
+                        window.location.href = 'https://www.tradero-ai.com/thanks.html';
                     }
                 } else {
                     alert(data.error || 'Failed to send message');
