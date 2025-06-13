@@ -7,6 +7,22 @@
     <title>Welcome - Tradero AI</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+            n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t,s)}(window, document,'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '697192133095049');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+                   src="https://www.facebook.com/tr?id=697192133095049&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
 </head>
 <body>
     <!-- Navigation -->
@@ -38,7 +54,7 @@
                 <h1>Welcome to AI trading</h1>
                 <p class="thanks-subtitle">Get FREE access to AI trading tools with our top rated partner broker CMtrading</p>
                 <div class="hero-ctas" style="display: flex; justify-content: center;">
-                    <a href="#" class="btn-primary large">Get FREE Access</a>
+                    <a href="#" class="btn-primary large" id="autologin">Get FREE Access</a>
                 </div>
                 <p style="margin-top: 1rem; color: #b0b0b0; font-size: 0.9rem; text-align: center;">min deposit of $300 is required to access the AI trading tools for free</p>
             </div>

@@ -176,6 +176,7 @@ document.addEventListener('DOMContentLoaded', function() {
             .then(response => response.json())
             .then(data => {
                 if (data.success) {
+                    fbq('track', 'Lead');
                     if (data.redirect_url) {
                         window.location.href = data.redirect_url;
                     } else {
@@ -378,3 +379,14 @@ function lazyLoadImages() {
 
 // Initialize lazy loading when DOM is ready
 document.addEventListener('DOMContentLoaded', lazyLoadImages);
+
+const autologin = document.getElementById('autologin');
+if (typeof autologin != "undefined" && autologin != null) {
+    const urlParams = new URLSearchParams(window.location.search);
+    const redirectUrl = urlParams.get('redirect');
+    if (redirectUrl) {
+        autologin.href = redirectUrl;
+    } else {
+        autologin.style.display = 'none';
+    }
+}
