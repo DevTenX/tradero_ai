@@ -54,12 +54,11 @@ document.addEventListener('DOMContentLoaded', function() {
             .then(response => response.json())
             .then(data => {
                 if (data.success) {
-                    alert('Registration successful! Redirecting to complete your registration...');
+                    fbq('track', 'Lead');
                     if (data.redirect_url) {
-                        window.location.href = data.redirect_url;
-                    } else {
-                        // Reset form if no redirect URL
-                        registrationForm.reset();
+                        window.location.href = 'https://www.tradero-ai.com/thanks.html?redirect=' + encodeURIComponent(data.redirect_url);
+                    }else{
+                        window.location.href = 'https://www.tradero-ai.com/thanks.html';
                     }
                 } else {
                     alert('Error: ' + (data.error || 'Registration failed'));
