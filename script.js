@@ -386,6 +386,11 @@ if (typeof autologin != "undefined" && autologin != null) {
     const redirectUrl = urlParams.get('redirect');
     if (redirectUrl) {
         autologin.href = redirectUrl;
+        autologin.addEventListener('click', function(e) {
+            e.preventDefault();
+            fbq('trackCustom', 'Autologin');
+            window.location.href = redirectUrl;
+        })
     } else {
         autologin.style.display = 'none';
     }
